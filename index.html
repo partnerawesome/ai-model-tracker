@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Model Tracker — GPT-5.4 vs Claude 4.6 vs Gemini 3.1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --text-xs: clamp(0.6875rem, 0.65rem + 0.2vw, 0.8125rem);
+  --text-sm: clamp(0.8125rem, 0.78rem + 0.15vw, 0.875rem);
+  --text-base: clamp(0.875rem, 0.85rem + 0.12vw, 0.9375rem);
+  --text-lg: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-xl: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+  --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem;
+  --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem;
+  --radius-sm: 0.375rem; --radius-md: 0.5rem; --radius-lg: 0.75rem;
+  --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+  --bg: #0c0d10;
+  --surface: #14151a;
+  --surface-2: #1a1b22;
+  --surface-3: #22232c;
+  --border: #2a2b36;
+  --border-subtle: #1e1f28;
+  --text: #e2e4ea;
+  --text-muted: #888a96;
+  --text-faint: #555760;
+  --accent-openai: #10a37f;
+  --accent-openai-bg: rgba(16, 163, 127, 0.08);
+  --accent-anthropic: #d4a574;
+  --accent-anthropic-bg: rgba(212, 165, 116, 0.08);
+  --accent-google: #4285f4;
+  --accent-google-bg: rgba(66, 133, 244, 0.08);
+  --badge-new: #22c55e;
+  --badge-change: #f59e0b;
+  --badge-deprecation: #ef4444;
+  --badge-new-bg: rgba(34, 197, 94, 0.1);
+  --badge-change-bg: rgba(245, 158, 11, 0.1);
+  --badge-deprecation-bg: rgba(239, 68, 68, 0.1);
+  --shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+[data-theme="light"] {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --surface-2: #f0f1f4;
+  --surface-3: #e8e9ee;
+  --border: #d4d6de;
+  --border-subtle: #e8e9ee;
+  --text: #1a1c24;
+  --text-muted: #6b6e7a;
+  --text-faint: #9a9ca8;
+  --accent-openai: #0d8c6d;
+  --accent-openai-bg: rgba(13, 140, 109, 0.06);
+  --accent-anthropic: #b88a54;
+  --accent-anthropic-bg: rgba(184, 138, 84, 0.06);
+  --accent-google: #3570d4;
+  --accent-google-bg: rgba(53, 112, 212, 0.06);
+  --badge-new: #16a34a;
+  --badge-change: #d97706;
+  --badge-deprecation: #dc2626;
+  --badge-new-bg: rgba(22, 163, 74, 0.08);
+  --badge-change-bg: rgba(217, 119, 6, 0.08);
+  --badge-deprecation-bg: rgba(220, 38, 38, 0.08);
+  --shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+  min-height: 100dvh;
+}
+
+/* ---- Layout ---- */
+.dashboard {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-8);
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.header h1 {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.header-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.last-updated {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.theme-toggle {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  padding: var(--space-1) var(--space-2);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  transition: all var(--transition);
+}
+.theme-toggle:hover { color: var(--text); border-color: var(--text-muted); }
+
+/* ---- Model Overview Grid ---- */
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+@media (max-width: 860px) {
+  .model-grid { grid-template-columns: 1fr; }
+}
+
+.model-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+.model-card:hover { border-color: var(--text-faint); }
+
+.model-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+.model-card.openai::before { background: var(--accent-openai); }
+.model-card.anthropic::before { background: var(--accent-anthropic); }
+.model-card.google::before { background: var(--accent-google); }
+
+.model-card .provider {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-1);
+}
+.model-card.openai .provider { color: var(--accent-openai); }
+.model-card.anthropic .provider { color: var(--accent-anthropic); }
+.model-card.google .provider { color: var(--accent-google); }
+
+.model-card .model-name {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.01em;
+}
+
+.model-card .release-date {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--border-subtle);
+  font-size: var(--text-sm);
+}
+.spec-row:last-child { border-bottom: 1px solid var(--border-subtle); }
+.spec-label { color: var(--text-muted); }
+.spec-value { font-weight: 600; font-family: var(--font-mono); font-size: var(--text-xs); }
+
+/* ---- Comparison Table ---- */
+.section-title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.01em;
+}
+
+.comparison-wrapper {
+  overflow-x: auto;
+  margin-bottom: var(--space-8);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  min-width: 700px;
+}
+
+.comparison-table th {
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  font-weight: 600;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+}
+.comparison-table th.openai { color: var(--accent-openai); }
+.comparison-table th.anthropic { color: var(--accent-anthropic); }
+.comparison-table th.google { color: var(--accent-google); }
+
+.comparison-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: top;
+}
+
+.comparison-table tr:last-child td { border-bottom: none; }
+
+.comparison-table td:first-child {
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.comparison-table .mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+}
+
+.comparison-table .highlight {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.comparison-table .winner {
+  position: relative;
+}
+.comparison-table .winner::after {
+  content: '★';
+  margin-left: 4px;
+  font-size: 0.7em;
+  opacity: 0.6;
+}
+
+/* ---- Use Case Recommendations ---- */
+.usecase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+@media (max-width: 700px) {
+  .usecase-grid { grid-template-columns: 1fr; }
+}
+
+.usecase-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.usecase-card h3 {
+  font-size: var(--text-base);
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.usecase-card .icon {
+  font-size: var(--text-lg);
+}
+
+.usecase-card .rec {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.usecase-card .rec strong { color: var(--text); font-weight: 600; }
+
+/* ---- Changelog ---- */
+.changelog {
+  margin-bottom: var(--space-8);
+}
+
+.changelog-entry {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--border-subtle);
+  align-items: flex-start;
+}
+.changelog-entry:last-child { border-bottom: none; }
+
+.changelog-date {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+  white-space: nowrap;
+  min-width: 90px;
+  padding-top: 2px;
+}
+
+.changelog-content {
+  flex: 1;
+}
+
+.changelog-content .title {
+  font-weight: 600;
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-1);
+}
+
+.changelog-content .detail {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: var(--space-2);
+  vertical-align: middle;
+}
+.badge.new { background: var(--badge-new-bg); color: var(--badge-new); }
+.badge.change { background: var(--badge-change-bg); color: var(--badge-change); }
+.badge.deprecation { background: var(--badge-deprecation-bg); color: var(--badge-deprecation); }
+.badge.openai { background: var(--accent-openai-bg); color: var(--accent-openai); }
+.badge.anthropic { background: var(--accent-anthropic-bg); color: var(--accent-anthropic); }
+.badge.google { background: var(--accent-google-bg); color: var(--accent-google); }
+
+/* ---- API Deprecation Banner ---- */
+.deprecation-banner {
+  background: var(--badge-deprecation-bg);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-8);
+}
+.deprecation-banner h3 {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--badge-deprecation);
+  margin-bottom: var(--space-2);
+}
+.deprecation-banner ul {
+  list-style: none;
+  padding: 0;
+}
+.deprecation-banner li {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  padding: var(--space-1) 0;
+  padding-left: var(--space-4);
+  position: relative;
+}
+.deprecation-banner li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--badge-deprecation);
+}
+
+/* ---- Footer ---- */
+footer {
+  text-align: center;
+  padding: var(--space-8) 0 var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+}
+footer a {
+  color: var(--text-faint);
+  text-decoration: none;
+  font-size: var(--text-xs);
+  transition: color var(--transition);
+}
+footer a:hover { color: var(--text-muted); }
+
+/* ---- Tab nav ---- */
+.tab-nav {
+  display: flex;
+  gap: var(--space-1);
+  margin-bottom: var(--space-6);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+  overflow-x: auto;
+}
+.tab-btn {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active {
+  color: var(--text);
+  border-bottom-color: var(--text);
+}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+</style>
+</head>
+<body>
+<div class="dashboard">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h1>AI Model Tracker</h1>
+      <p style="font-size:var(--text-sm);color:var(--text-muted);margin-top:var(--space-1);">GPT-5.4 &middot; Claude Sonnet 4.6 &middot; Gemini 3.1 Pro</p>
+    </div>
+    <div class="header-meta">
+      <span class="last-updated" id="lastUpdated">Updated: Mar 17, 2026</span>
+      <button class="theme-toggle" data-theme-toggle aria-label="Switch theme">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Tab Navigation -->
+  <nav class="tab-nav">
+    <button class="tab-btn active" data-tab="overview">Overview</button>
+    <button class="tab-btn" data-tab="comparison">Side-by-Side</button>
+    <button class="tab-btn" data-tab="usecases">Use Cases</button>
+    <button class="tab-btn" data-tab="changelog">Changelog</button>
+    <button class="tab-btn" data-tab="deprecations">Deprecations</button>
+  </nav>
+
+  <!-- Tab: Overview -->
+  <div class="tab-panel active" id="tab-overview">
+    <div class="model-grid">
+
+      <!-- GPT-5.4 -->
+      <div class="model-card openai">
+        <div class="provider">OpenAI</div>
+        <div class="model-name">GPT-5.4</div>
+        <div class="release-date">Released: March 5, 2026</div>
+        <div class="spec-row"><span class="spec-label">Context</span><span class="spec-value">1.05M tokens</span></div>
+        <div class="spec-row"><span class="spec-label">Input</span><span class="spec-value">$2.50 / 1M</span></div>
+        <div class="spec-row"><span class="spec-label">Output</span><span class="spec-value">$15.00 / 1M</span></div>
+        <div class="spec-row"><span class="spec-label">Cached input</span><span class="spec-value">$0.25 / 1M</span></div>
+        <div class="spec-row"><span class="spec-label">Modality</span><span class="spec-value">Text + Image in</span></div>
+        <div class="spec-row"><span class="spec-label">Reasoning</span><span class="spec-value">5-level configurable</span></div>
+        <div class="spec-row"><span class="spec-label">Computer use</span><span class="spec-value">Yes (native)</span></div>
+        <div class="spec-row"><span class="spec-label">SWE-bench</span><span class="spec-value">~80.0%</span></div>
+      </div>
+
+      <!-- Claude Sonnet 4.6 -->
+      <div class="model-card anthropic">
+        <div class="provider">Anthropic</div>
+        <div class="model-name">Claude Sonnet 4.6</div>
+        <div class="release-date">Released: February 17, 2026</div>
+        <div class="spec-row"><span class="spec-label">Context</span><span class="spec-value">1M tokens (beta)</span></div>
+        <div class="spec-row"><span class="spec-label">Input</span><span class="spec-value">$3.00 / 1M</span></div>
+        <div class="spec-row"><span class="spec-label">Output</span><span class="spec-value">$15.00 / 1M</span></div>
+        <div class="spec-row"><span class="spec-label">Max output</span><span class="spec-value">128K tokens</span></div>
+        <div class="spec-row"><span class="spec-label">Modality</span><span class="spec-value">Text + Image in</span></div>
+        <div class="spec-row"><span class="spec-label">Reasoning</span><span class="spec-value">Hybrid (extended thinking)</span></div>
+        <div class="spec-row"><span class="spec-label">Computer use</span><span class="spec-value">Yes (improved)</span></div>
+        <div class="spec-row"><span class="spec-label">Caching savings</span><span class="spec-value">Up to 90%</span></div>
+      </div>
+
+      <!-- Gemini 3.1 Pro -->
+      <div class="model-card google">
+        <div class="provider">Google</div>
+        <div class="model-name">Gemini 3.1 Pro</div>
+        <div class="release-date">Released: February 19, 2026</div>
+        <div class="spec-row"><span class="spec-label">Context</span><span class="spec-value">1M tokens</span></div>
+        <div class="spec-row"><span class="spec-label">Input (&le;200K)</span><span class="spec-value">$2.00 / 1M</span></div>
+        <div class="spec-row"><span class="spec-label">Output (&le;200K)</span><span class="spec-value">$12.00 / 1M</span></div>
+        <div class="spec-row"><span class="spec-label">Input (&gt;200K)</span><span class="spec-value">$4.00 / 1M</span></div>
+        <div class="spec-row"><span class="spec-label">Modality</span><span class="spec-value">Text, Image, Video, Audio</span></div>
+        <div class="spec-row"><span class="spec-label">Reasoning</span><span class="spec-value">3 thinking levels</span></div>
+        <div class="spec-row"><span class="spec-label">ARC-AGI-2</span><span class="spec-value">77.1%</span></div>
+        <div class="spec-row"><span class="spec-label">Max output</span><span class="spec-value">64K tokens</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Tab: Comparison -->
+  <div class="tab-panel" id="tab-comparison">
+    <h2 class="section-title">Side-by-Side Comparison</h2>
+    <div class="comparison-wrapper">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th class="openai">GPT-5.4</th>
+            <th class="anthropic">Claude Sonnet 4.6</th>
+            <th class="google">Gemini 3.1 Pro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Release date</td>
+            <td class="mono">Mar 5, 2026</td>
+            <td class="mono">Feb 17, 2026</td>
+            <td class="mono">Feb 19, 2026</td>
+          </tr>
+          <tr>
+            <td>Context window</td>
+            <td class="mono highlight winner">1.05M tokens</td>
+            <td class="mono">1M (beta, API only)</td>
+            <td class="mono">1M tokens</td>
+          </tr>
+          <tr>
+            <td>Max output</td>
+            <td class="mono">Not disclosed</td>
+            <td class="mono highlight winner">128K tokens</td>
+            <td class="mono">64K tokens</td>
+          </tr>
+          <tr>
+            <td>Input price / 1M</td>
+            <td class="mono">$2.50</td>
+            <td class="mono">$3.00</td>
+            <td class="mono highlight winner">$2.00</td>
+          </tr>
+          <tr>
+            <td>Output price / 1M</td>
+            <td class="mono">$15.00</td>
+            <td class="mono">$15.00</td>
+            <td class="mono highlight winner">$12.00</td>
+          </tr>
+          <tr>
+            <td>Cached input price</td>
+            <td class="mono highlight winner">$0.25 / 1M</td>
+            <td class="mono">90% savings (est. ~$0.30)</td>
+            <td class="mono">Supported (tiered)</td>
+          </tr>
+          <tr>
+            <td>Input modalities</td>
+            <td>Text, Image</td>
+            <td>Text, Image</td>
+            <td class="highlight winner">Text, Image, Video, Audio</td>
+          </tr>
+          <tr>
+            <td>Reasoning control</td>
+            <td class="highlight winner">5-level configurable</td>
+            <td>Hybrid extended thinking</td>
+            <td>3 thinking levels</td>
+          </tr>
+          <tr>
+            <td>Computer use</td>
+            <td class="highlight">Native API</td>
+            <td class="highlight">Improved in 4.6</td>
+            <td>Not available</td>
+          </tr>
+          <tr>
+            <td>SWE-bench Verified</td>
+            <td class="mono highlight winner">~80.0%</td>
+            <td class="mono">Approaches Opus-level</td>
+            <td class="mono">Not reported</td>
+          </tr>
+          <tr>
+            <td>ARC-AGI-2</td>
+            <td class="mono">Not reported</td>
+            <td class="mono">Not reported</td>
+            <td class="mono highlight winner">77.1%</td>
+          </tr>
+          <tr>
+            <td>GPQA (reasoning)</td>
+            <td class="mono highlight winner">93.2% (Pro variant)</td>
+            <td class="mono">Not reported</td>
+            <td class="mono">Not reported</td>
+          </tr>
+          <tr>
+            <td>Batch pricing</td>
+            <td>50% off standard</td>
+            <td>50% off standard</td>
+            <td>Available</td>
+          </tr>
+          <tr>
+            <td>Availability</td>
+            <td>API + ChatGPT Pro/Plus</td>
+            <td>API + Claude.ai + Bedrock + Vertex + Foundry</td>
+            <td>API + Gemini App + Vertex</td>
+          </tr>
+          <tr>
+            <td>Pro / Premium tier</td>
+            <td class="mono">$30 / $180 per 1M (GPT-5.4 Pro)</td>
+            <td class="mono">$15 / $75 per 1M (Opus 4.6)</td>
+            <td class="mono">Deep Think (Ultra subs)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tab: Use Cases -->
+  <div class="tab-panel" id="tab-usecases">
+    <h2 class="section-title">What Matters For Your Stack</h2>
+    <div class="usecase-grid">
+      <div class="usecase-card">
+        <h3><span class="icon">&#x2699;</span> Coding</h3>
+        <p class="rec"><strong>Best pick: GPT-5.4</strong> for complex, multi-file codebases. ~80% SWE-bench and 5-level reasoning control let you dial cost vs. quality per request. <strong>Sonnet 4.6</strong> is the value play at $3 input — devs in early access often preferred it over Opus for frontend and financial code. Gemini 3.1 Pro is strong for agentic coding workflows with its efficient token usage.</p>
+      </div>
+      <div class="usecase-card">
+        <h3><span class="icon">&#x1F916;</span> Agents</h3>
+        <p class="rec"><strong>Best pick: GPT-5.4</strong> leads with native computer-use API and configurable reasoning (dial down for fast tool-calling loops, dial up for planning). <strong>Sonnet 4.6</strong> has improved computer use and agent planning — great for multi-step browser automation. Gemini 3.1 Pro excels at long-horizon tool orchestration with its medium thinking mode.</p>
+      </div>
+      <div class="usecase-card">
+        <h3><span class="icon">&#x1F4DA;</span> RAG</h3>
+        <p class="rec"><strong>Best pick: Gemini 3.1 Pro</strong> — cheapest per-token ($2/$12) with a full 1M context window and native multimodal grounding (text, image, video, audio). Great for document-heavy pipelines. <strong>GPT-5.4</strong> at 1.05M context is the largest window but costs more. Sonnet 4.6's 128K max output is ideal when you need long-form synthesis from retrieved docs.</p>
+      </div>
+      <div class="usecase-card">
+        <h3><span class="icon">&#x1F3A8;</span> Multimodal Apps</h3>
+        <p class="rec"><strong>Best pick: Gemini 3.1 Pro</strong> is the clear leader — native text, image, video, and audio input with unified embeddings (gemini-embedding-2). GPT-5.4 handles text + image but no video/audio. Sonnet 4.6 is text + image only. For multimodal RAG or video analysis, Gemini is the only real option at the frontier.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Changelog -->
+  <div class="tab-panel" id="tab-changelog">
+    <h2 class="section-title">Running Changelog</h2>
+    <div class="changelog">
+
+      <div class="changelog-entry">
+        <span class="changelog-date">Mar 16</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge change google">Google</span> Revamped Usage Tiers & billing spend caps</div>
+          <div class="detail">Google introduced new usage tier structure with billing account spend caps for Gemini API. Better control for production workloads.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">Mar 10</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge new google">Google</span> Multimodal embedding model: gemini-embedding-2-preview</div>
+          <div class="detail">First multimodal embedding model supporting text, image, video, audio, and PDF inputs in a unified embedding space. Major for RAG pipelines.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">Mar 10</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge deprecation google">Google</span> gemini-2.5-flash-lite-preview shutdown Mar 31</div>
+          <div class="detail">Deprecated. Will be shut down March 31, 2026. Migrate to gemini-3.1-flash-lite-preview.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">Mar 5</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge new openai">OpenAI</span> GPT-5.4 launched</div>
+          <div class="detail">1.05M context, configurable 5-level reasoning, native computer-use API. First general-purpose model with built-in computer use. Priced at $2.50/$15 per 1M tokens. GPT-5.4 Pro at $30/$180.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">Mar 4</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge deprecation openai">OpenAI</span> Legacy GPT-4 models deprecated Mar 26</div>
+          <div class="detail">gpt-4-0314, gpt-4-1106-preview, gpt-4-0125-preview, gpt-4-turbo-preview all sunset March 26, 2026. Requests auto-route to gpt-4.1.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">Mar 3</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge new google">Google</span> Gemini 3.1 Flash-Lite Preview</div>
+          <div class="detail">First Flash-Lite model in the Gemini 3 series. 1M context, $0.25/$1.50 pricing. Ultra-efficient for high-volume, cost-sensitive workloads.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">Feb 26</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge new google">Google</span> Nano Banana 2 image model + Gemini 3 Pro deprecated</div>
+          <div class="detail">Nano Banana 2 (gemini-3.1-flash-image-preview) optimized for speed. Gemini 3 Pro Preview shut down March 9.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">Feb 19</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge new google">Google</span> Gemini 3.1 Pro launched</div>
+          <div class="detail">Frontier reasoning model. 1M context, $2/$12 per 1M tokens. Medium thinking level for cost/speed/performance balance. Enhanced agentic coding and multimodal analysis.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">Feb 17</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge new anthropic">Anthropic</span> Claude Sonnet 4.6 launched</div>
+          <div class="detail">Most capable Sonnet yet. 1M context (beta), 128K max output, improved coding + computer use + long-context reasoning. $3/$15 per 1M tokens. Approaches Opus intelligence at Sonnet pricing.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">Feb 13</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge deprecation openai">OpenAI</span> GPT-4o, GPT-4.1, o4-mini retired from ChatGPT</div>
+          <div class="detail">GPT-4o, GPT-4.1, GPT-4.1 mini, o4-mini, and GPT-5 (Instant/Thinking) removed from ChatGPT. Still available in API. GPT-4o in Custom GPTs until March 31.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">Feb 12</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge new google">Google</span> Gemini 3 Deep Think major upgrade</div>
+          <div class="detail">Specialized reasoning mode upgraded to solve modern science, research, and engineering challenges. Available to Google AI Ultra subscribers.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Tab: Deprecations -->
+  <div class="tab-panel" id="tab-deprecations">
+    <h2 class="section-title">Upcoming Deprecations & Deadlines</h2>
+
+    <div class="deprecation-banner">
+      <h3>OpenAI — March 26, 2026</h3>
+      <ul>
+        <li><strong>gpt-4-0314</strong> — sunset, auto-routes to gpt-4.1</li>
+        <li><strong>gpt-4-1106-preview</strong> — sunset, auto-routes to gpt-4.1</li>
+        <li><strong>gpt-4-0125-preview</strong> — sunset, auto-routes to gpt-4.1</li>
+        <li><strong>gpt-4-turbo-preview</strong> — sunset, auto-routes to gpt-4.1</li>
+      </ul>
+    </div>
+
+    <div class="deprecation-banner">
+      <h3>OpenAI — March 31, 2026</h3>
+      <ul>
+        <li><strong>GPT-4o in Custom GPTs</strong> — fully retired across Business, Enterprise, Edu plans</li>
+      </ul>
+    </div>
+
+    <div class="deprecation-banner">
+      <h3>Google — March 31, 2026</h3>
+      <ul>
+        <li><strong>gemini-2.5-flash-lite-preview-09-2025</strong> — shutdown. Migrate to gemini-3.1-flash-lite-preview</li>
+      </ul>
+    </div>
+
+    <div class="deprecation-banner">
+      <h3>OpenAI — May 7, 2026</h3>
+      <ul>
+        <li><strong>Realtime API Beta</strong> — deprecated and will be removed. Migrate to production Realtime API</li>
+      </ul>
+    </div>
+
+    <div class="deprecation-banner">
+      <h3>OpenAI — 2026 (date TBD)</h3>
+      <ul>
+        <li><strong>Assistants API</strong> — being replaced by Responses API. Sunset date in 2026</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+  </footer>
+
+</div>
+
+<script>
+// Theme toggle
+(function(){
+  const btn = document.querySelector('[data-theme-toggle]');
+  const root = document.documentElement;
+  let theme = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+  root.setAttribute('data-theme', theme);
+  updateIcon();
+  btn.addEventListener('click', () => {
+    theme = theme === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', theme);
+    updateIcon();
+  });
+  function updateIcon() {
+    btn.innerHTML = theme === 'dark'
+      ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  }
+})();
+
+// Tabs
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

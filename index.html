@@ -477,7 +477,7 @@ footer a:hover { color: var(--text-muted); }
       <p style="font-size:var(--text-sm);color:var(--text-muted);margin-top:var(--space-1);">GPT-5.4 &middot; Claude Sonnet 4.6 &middot; Gemini 3.1 Pro</p>
     </div>
     <div class="header-meta">
-      <span class="last-updated" id="lastUpdated">Updated: Mar 17, 2026</span>
+      <span class="last-updated" id="lastUpdated">Updated: Mar 18, 2026</span>
       <button class="theme-toggle" data-theme-toggle aria-label="Switch theme">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
       </button>
@@ -683,6 +683,14 @@ footer a:hover { color: var(--text-muted); }
     <div class="changelog">
 
       <div class="changelog-entry">
+        <span class="changelog-date">Mar 17</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge new openai">OpenAI</span> GPT-5.4 mini + nano released</div>
+          <div class="detail">GPT-5.4 mini brings GPT-5.4-class capability to high-volume workloads with tool search, computer use, and compaction; GPT-5.4 nano is optimized for simple, high-volume tasks and supports compaction only.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
         <span class="changelog-date">Mar 16</span>
         <div class="changelog-content">
           <div class="title"><span class="badge change google">Google</span> Revamped Usage Tiers & billing spend caps</div>
@@ -691,10 +699,18 @@ footer a:hover { color: var(--text-muted); }
       </div>
 
       <div class="changelog-entry">
+        <span class="changelog-date">Mar 12</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge change google">Google</span> AI Studio project-level spend caps</div>
+          <div class="detail">Added project-level spend caps for Gemini API billing in AI Studio, enabling tighter cost control for production experimentation.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
         <span class="changelog-date">Mar 10</span>
         <div class="changelog-content">
           <div class="title"><span class="badge new google">Google</span> Multimodal embedding model: gemini-embedding-2-preview</div>
-          <div class="detail">First multimodal embedding model supporting text, image, video, audio, and PDF inputs in a unified embedding space. Major for RAG pipelines.</div>
+          <div class="detail">First multimodal embedding model supporting text, image, video, audio, and PDF inputs in a unified embedding space. Major for multimodal RAG and unified retrieval.</div>
         </div>
       </div>
 
@@ -703,6 +719,22 @@ footer a:hover { color: var(--text-muted); }
         <div class="changelog-content">
           <div class="title"><span class="badge deprecation google">Google</span> gemini-2.5-flash-lite-preview shutdown Mar 31</div>
           <div class="detail">Deprecated. Will be shut down March 31, 2026. Migrate to gemini-3.1-flash-lite-preview.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">Mar 9</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge change google">Google</span> gemini-3-pro-preview alias redirected</div>
+          <div class="detail">Gemini 3 Pro Preview was shut down; the gemini-3-pro-preview alias now points to gemini-3.1-pro-preview.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">Mar 12</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge change openai">OpenAI</span> Sora API: 20s generations, 1080p, edits endpoint; remix deprecated</div>
+          <div class="detail">Sora API expanded with character references, longer generations up to 20s, 1080p for sora-2-pro (billed at $0.70/sec), Batch API support, and a new /v1/videos/edits endpoint. /v1/videos/{video_id}/remix will be deprecated in 6 months.</div>
         </div>
       </div>
 

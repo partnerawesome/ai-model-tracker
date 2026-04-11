@@ -683,6 +683,62 @@ footer a:hover { color: var(--text-muted); }
     <div class="changelog">
 
       <div class="changelog-entry">
+        <span class="changelog-date">Apr 2</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge new google">Google</span> Gemma 4 models available via Gemini API</div>
+          <div class="detail">Gemma 4 open-weight models are now accessible through the Gemini API, expanding options for self-hosted and fine-tuned deployments.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">Apr 1</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge change google">Google</span> New inference tiers: Flex and Priority</div>
+          <div class="detail">Google introduced Flex and Priority inference tiers for Gemini API, giving developers control over latency vs. cost tradeoffs in production workloads.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">Mar 31</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge new google">Google</span> Veo 3.1 Lite Preview + gemini-2.5-flash-lite shutdown</div>
+          <div class="detail">Veo 3.1 Lite Preview (veo-3.1-lite-generate-preview) launched for cost-efficient video generation. gemini-2.5-flash-lite-preview-09-2025 has been shut down — migrate to gemini-3.1-flash-lite-preview.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">Mar 26</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge new google">Google</span> Gemini 3.1 Flash Live Preview (real-time audio)</div>
+          <div class="detail">gemini-3.1-flash-live-preview enables audio-to-audio real-time conversations via the Live API. Key for agent-to-agent (A2A) and voice-first applications.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">Mar 25</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge new google">Google</span> Lyria 3 music generation models</div>
+          <div class="detail">Lyria 3 models generate music from text and image prompts. Expands Gemini's multimodal capabilities into audio generation.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">Mar 24</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge deprecation openai">OpenAI</span> Sora 2 models + Videos API deprecated (shutdown Sep 24)</div>
+          <div class="detail">OpenAI announced deprecation of Sora 2 model aliases/snapshots and the entire Videos API. Shutdown date: September 24, 2026. Plan migrations now if using Sora in production.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">Mar 23</span>
+        <div class="changelog-content">
+          <div class="title"><span class="badge change google">Google</span> AI Studio billing: Prepay and Postpay plans</div>
+          <div class="detail">Google introduced Prepay and Postpay billing plans for AI Studio, giving developers more flexible payment options for Gemini API usage.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
         <span class="changelog-date">Mar 18</span>
         <div class="changelog-content">
           <div class="title"><span class="badge new google">Google</span> Built-in tools + function calling in one call; Maps grounding for Gemini 3</div>
@@ -838,6 +894,14 @@ footer a:hover { color: var(--text-muted); }
       <h3>Google — March 31, 2026</h3>
       <ul>
         <li><strong>gemini-2.5-flash-lite-preview-09-2025</strong> — shutdown. Migrate to gemini-3.1-flash-lite-preview</li>
+      </ul>
+    </div>
+
+    <div class="deprecation-banner">
+      <h3>OpenAI — September 24, 2026</h3>
+      <ul>
+        <li><strong>Sora 2 models</strong> — all Sora 2 aliases and snapshots deprecated. Full shutdown Sep 24, 2026</li>
+        <li><strong>Videos API (/v1/videos/*)</strong> — entire endpoint being removed. Migrate video generation workflows</li>
       </ul>
     </div>
 

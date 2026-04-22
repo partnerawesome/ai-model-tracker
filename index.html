@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+
+<html data-theme="dark" lang="en">
 <head>
 <!--
    ______                            __
@@ -11,16 +12,16 @@
         Created with Perplexity Computer
         https://www.perplexity.ai/computer
 -->
-<meta name="generator" content="Perplexity Computer">
-<meta name="author" content="Perplexity Computer">
-<meta property="og:see_also" content="https://www.perplexity.ai/computer">
-<link rel="author" href="https://www.perplexity.ai/computer">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="Perplexity Computer" name="generator"/>
+<meta content="Perplexity Computer" name="author"/>
+<meta content="https://www.perplexity.ai/computer" property="og:see_also"/>
+<link href="https://www.perplexity.ai/computer" rel="author"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>AI Model Tracker — GPT-5.4 vs Claude 4.6 vs Gemini 3.1</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -469,521 +470,469 @@ footer a:hover { color: var(--text-muted); }
 </head>
 <body>
 <div class="dashboard">
-
-  <!-- Header -->
-  <div class="header">
-    <div>
-      <h1>AI Model Tracker</h1>
-      <p style="font-size:var(--text-sm);color:var(--text-muted);margin-top:var(--space-1);">GPT-5.4 &middot; Claude Sonnet 4.6 &middot; Gemini 3.1 Pro</p>
-    </div>
-    <div class="header-meta">
-      <span class="last-updated" id="lastUpdated">Updated: Apr 16, 2026</span>
-      <button class="theme-toggle" data-theme-toggle aria-label="Switch theme">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- Tab Navigation -->
-  <nav class="tab-nav">
-    <button class="tab-btn active" data-tab="overview">Overview</button>
-    <button class="tab-btn" data-tab="comparison">Side-by-Side</button>
-    <button class="tab-btn" data-tab="usecases">Use Cases</button>
-    <button class="tab-btn" data-tab="changelog">Changelog</button>
-    <button class="tab-btn" data-tab="deprecations">Deprecations</button>
-  </nav>
-
-  <!-- Tab: Overview -->
-  <div class="tab-panel active" id="tab-overview">
-    <div class="model-grid">
-
-      <!-- GPT-5.4 -->
-      <div class="model-card openai">
-        <div class="provider">OpenAI</div>
-        <div class="model-name">GPT-5.4</div>
-        <div class="release-date">Released: March 5, 2026</div>
-        <div class="spec-row"><span class="spec-label">Context</span><span class="spec-value">1.05M tokens</span></div>
-        <div class="spec-row"><span class="spec-label">Input</span><span class="spec-value">$2.50 / 1M</span></div>
-        <div class="spec-row"><span class="spec-label">Output</span><span class="spec-value">$15.00 / 1M</span></div>
-        <div class="spec-row"><span class="spec-label">Cached input</span><span class="spec-value">$0.25 / 1M</span></div>
-        <div class="spec-row"><span class="spec-label">Modality</span><span class="spec-value">Text + Image in</span></div>
-        <div class="spec-row"><span class="spec-label">Reasoning</span><span class="spec-value">5-level configurable</span></div>
-        <div class="spec-row"><span class="spec-label">Computer use</span><span class="spec-value">Yes (native)</span></div>
-        <div class="spec-row"><span class="spec-label">SWE-bench</span><span class="spec-value">~80.0%</span></div>
-      </div>
-
-      <!-- Claude Sonnet 4.6 -->
-      <div class="model-card anthropic">
-        <div class="provider">Anthropic</div>
-        <div class="model-name">Claude Sonnet 4.6</div>
-        <div class="release-date">Released: February 17, 2026</div>
-        <div class="spec-row"><span class="spec-label">Context</span><span class="spec-value">1M tokens (beta)</span></div>
-        <div class="spec-row"><span class="spec-label">Input</span><span class="spec-value">$3.00 / 1M</span></div>
-        <div class="spec-row"><span class="spec-label">Output</span><span class="spec-value">$15.00 / 1M</span></div>
-        <div class="spec-row"><span class="spec-label">Max output</span><span class="spec-value">128K tokens</span></div>
-        <div class="spec-row"><span class="spec-label">Modality</span><span class="spec-value">Text + Image in</span></div>
-        <div class="spec-row"><span class="spec-label">Reasoning</span><span class="spec-value">Hybrid (extended thinking)</span></div>
-        <div class="spec-row"><span class="spec-label">Computer use</span><span class="spec-value">Yes (improved)</span></div>
-        <div class="spec-row"><span class="spec-label">Caching savings</span><span class="spec-value">Up to 90%</span></div>
-      </div>
-
-      <!-- Gemini 3.1 Pro -->
-      <div class="model-card google">
-        <div class="provider">Google</div>
-        <div class="model-name">Gemini 3.1 Pro</div>
-        <div class="release-date">Released: February 19, 2026</div>
-        <div class="spec-row"><span class="spec-label">Context</span><span class="spec-value">1M tokens</span></div>
-        <div class="spec-row"><span class="spec-label">Input (&le;200K)</span><span class="spec-value">$2.00 / 1M</span></div>
-        <div class="spec-row"><span class="spec-label">Output (&le;200K)</span><span class="spec-value">$12.00 / 1M</span></div>
-        <div class="spec-row"><span class="spec-label">Input (&gt;200K)</span><span class="spec-value">$4.00 / 1M</span></div>
-        <div class="spec-row"><span class="spec-label">Modality</span><span class="spec-value">Text, Image, Video, Audio</span></div>
-        <div class="spec-row"><span class="spec-label">Reasoning</span><span class="spec-value">3 thinking levels</span></div>
-        <div class="spec-row"><span class="spec-label">ARC-AGI-2</span><span class="spec-value">77.1%</span></div>
-        <div class="spec-row"><span class="spec-label">Max output</span><span class="spec-value">64K tokens</span></div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Tab: Comparison -->
-  <div class="tab-panel" id="tab-comparison">
-    <h2 class="section-title">Side-by-Side Comparison</h2>
-    <div class="comparison-wrapper">
-      <table class="comparison-table">
-        <thead>
-          <tr>
-            <th>Dimension</th>
-            <th class="openai">GPT-5.4</th>
-            <th class="anthropic">Claude Sonnet 4.6</th>
-            <th class="google">Gemini 3.1 Pro</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Release date</td>
-            <td class="mono">Mar 5, 2026</td>
-            <td class="mono">Feb 17, 2026</td>
-            <td class="mono">Feb 19, 2026</td>
-          </tr>
-          <tr>
-            <td>Context window</td>
-            <td class="mono highlight winner">1.05M tokens</td>
-            <td class="mono">1M (beta, API only)</td>
-            <td class="mono">1M tokens</td>
-          </tr>
-          <tr>
-            <td>Max output</td>
-            <td class="mono">Not disclosed</td>
-            <td class="mono highlight winner">128K tokens</td>
-            <td class="mono">64K tokens</td>
-          </tr>
-          <tr>
-            <td>Input price / 1M</td>
-            <td class="mono">$2.50</td>
-            <td class="mono">$3.00</td>
-            <td class="mono highlight winner">$2.00</td>
-          </tr>
-          <tr>
-            <td>Output price / 1M</td>
-            <td class="mono">$15.00</td>
-            <td class="mono">$15.00</td>
-            <td class="mono highlight winner">$12.00</td>
-          </tr>
-          <tr>
-            <td>Cached input price</td>
-            <td class="mono highlight winner">$0.25 / 1M</td>
-            <td class="mono">90% savings (est. ~$0.30)</td>
-            <td class="mono">Supported (tiered)</td>
-          </tr>
-          <tr>
-            <td>Input modalities</td>
-            <td>Text, Image</td>
-            <td>Text, Image</td>
-            <td class="highlight winner">Text, Image, Video, Audio</td>
-          </tr>
-          <tr>
-            <td>Reasoning control</td>
-            <td class="highlight winner">5-level configurable</td>
-            <td>Hybrid extended thinking</td>
-            <td>3 thinking levels</td>
-          </tr>
-          <tr>
-            <td>Computer use</td>
-            <td class="highlight">Native API</td>
-            <td class="highlight">Improved in 4.6</td>
-            <td>Not available</td>
-          </tr>
-          <tr>
-            <td>SWE-bench Verified</td>
-            <td class="mono highlight winner">~80.0%</td>
-            <td class="mono">Approaches Opus-level</td>
-            <td class="mono">Not reported</td>
-          </tr>
-          <tr>
-            <td>ARC-AGI-2</td>
-            <td class="mono">Not reported</td>
-            <td class="mono">Not reported</td>
-            <td class="mono highlight winner">77.1%</td>
-          </tr>
-          <tr>
-            <td>GPQA (reasoning)</td>
-            <td class="mono highlight winner">93.2% (Pro variant)</td>
-            <td class="mono">Not reported</td>
-            <td class="mono">Not reported</td>
-          </tr>
-          <tr>
-            <td>Batch pricing</td>
-            <td>50% off standard</td>
-            <td>50% off standard</td>
-            <td>Available</td>
-          </tr>
-          <tr>
-            <td>Availability</td>
-            <td>API + ChatGPT Pro/Plus</td>
-            <td>API + Claude.ai + Bedrock + Vertex + Foundry</td>
-            <td>API + Gemini App + Vertex</td>
-          </tr>
-          <tr>
-            <td>Pro / Premium tier</td>
-            <td class="mono">$30 / $180 per 1M (GPT-5.4 Pro)</td>
-            <td class="mono">$15 / $75 per 1M (Opus 4.6)</td>
-            <td class="mono">Deep Think (Ultra subs)</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- Tab: Use Cases -->
-  <div class="tab-panel" id="tab-usecases">
-    <h2 class="section-title">What Matters For Your Stack</h2>
-    <div class="usecase-grid">
-      <div class="usecase-card">
-        <h3><span class="icon">&#x2699;</span> Coding</h3>
-        <p class="rec"><strong>Best pick: GPT-5.4</strong> for complex, multi-file codebases. ~80% SWE-bench and 5-level reasoning control let you dial cost vs. quality per request. <strong>Sonnet 4.6</strong> is the value play at $3 input — devs in early access often preferred it over Opus for frontend and financial code. Gemini 3.1 Pro is strong for agentic coding workflows with its efficient token usage.</p>
-      </div>
-      <div class="usecase-card">
-        <h3><span class="icon">&#x1F916;</span> Agents</h3>
-        <p class="rec"><strong>Best pick: GPT-5.4</strong> leads with native computer-use API and configurable reasoning (dial down for fast tool-calling loops, dial up for planning). <strong>Sonnet 4.6</strong> has improved computer use and agent planning — great for multi-step browser automation. Gemini 3.1 Pro excels at long-horizon tool orchestration with its medium thinking mode.</p>
-      </div>
-      <div class="usecase-card">
-        <h3><span class="icon">&#x1F4DA;</span> RAG</h3>
-        <p class="rec"><strong>Best pick: Gemini 3.1 Pro</strong> — cheapest per-token ($2/$12) with a full 1M context window and native multimodal grounding (text, image, video, audio). Great for document-heavy pipelines. <strong>GPT-5.4</strong> at 1.05M context is the largest window but costs more. Sonnet 4.6's 128K max output is ideal when you need long-form synthesis from retrieved docs.</p>
-      </div>
-      <div class="usecase-card">
-        <h3><span class="icon">&#x1F3A8;</span> Multimodal Apps</h3>
-        <p class="rec"><strong>Best pick: Gemini 3.1 Pro</strong> is the clear leader — native text, image, video, and audio input with unified embeddings (gemini-embedding-2). GPT-5.4 handles text + image but no video/audio. Sonnet 4.6 is text + image only. For multimodal RAG or video analysis, Gemini is the only real option at the frontier.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Tab: Changelog -->
-  <div class="tab-panel" id="tab-changelog">
-    <h2 class="section-title">Running Changelog</h2>
-    <div class="changelog">
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Apr 15</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge change openai">OpenAI</span> Agents SDK update: sandboxes, harness customization, memory controls</div>
-          <div class="detail">Agents SDK now supports running agents in controlled sandboxes, inspecting/customizing the open-source harness, and controlling when memories are created and where they're stored.</div>
-          <div class="meta">Source: <a href="https://developers.openai.com/api/docs/changelog" target="_blank" rel="noopener">OpenAI API changelog</a></div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Apr 15</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge new google">Google</span> Gemini 3.1 Flash TTS Preview (text-to-speech)</div>
-          <div class="detail">Google released Gemini 3.1 Flash TTS Preview, adding native text-to-speech capabilities to the Gemini API. Relevant for voice-first agents and multimodal applications.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Apr 15</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge change openai">OpenAI</span> Agents SDK: sandbox execution, memory controls</div>
-          <div class="detail">OpenAI Agents SDK now supports running agents in controlled sandboxes for safer code execution, plus explicit controls over when memories are created and where they’re stored. Key for compliance, per-tenant isolation, and secure coding agents.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Apr 14</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge new google">Google</span> Gemini Robotics ER 1.6 Preview; 1.5 Preview shutdown Apr 30</div>
-          <div class="detail">gemini-robotics-er-1.6-preview released for embodied reasoning in robotics. gemini-robotics-er-1.5-preview will shut down April 30, 2026 at 9AM PST — migrate to 1.6 before then.</div>
-          <div class="meta">Source: <a href="https://ai.google.dev/gemini-api/docs/changelog" target="_blank" rel="noopener">Gemini API changelog</a></div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Apr 7</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge new anthropic">Anthropic</span> Project Glasswing: Claude Mythos Preview (gated research)</div>
-          <div class="detail">Anthropic launched a gated research preview of Claude Mythos Preview for defensive cybersecurity via Project Glasswing. Pricing for participants: $25/MTok input, $125/MTok output. Available via Claude API, AWS Bedrock, Vertex AI, and Microsoft Foundry.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Apr 6</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge change anthropic">Anthropic</span> Google + Broadcom compute partnership (multi-GW TPU, 2027+)</div>
-          <div class="detail">Anthropic expanded its partnership with Google and Broadcom for multiple gigawatts of next-generation TPU compute starting in 2027. Signals massive infrastructure buildout for future Claude models.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Apr 2</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge new google">Google</span> Gemma 4 models available via Gemini API</div>
-          <div class="detail">Gemma 4 open-weight models are now accessible through the Gemini API, expanding options for self-hosted and fine-tuned deployments.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Apr 1</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge change google">Google</span> New inference tiers: Flex and Priority</div>
-          <div class="detail">Google introduced Flex and Priority inference tiers for Gemini API, giving developers control over latency vs. cost tradeoffs in production workloads.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Mar 31</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge new google">Google</span> Veo 3.1 Lite Preview + gemini-2.5-flash-lite shutdown</div>
-          <div class="detail">Veo 3.1 Lite Preview (veo-3.1-lite-generate-preview) launched for cost-efficient video generation. gemini-2.5-flash-lite-preview-09-2025 has been shut down — migrate to gemini-3.1-flash-lite-preview.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Mar 26</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge new google">Google</span> Gemini 3.1 Flash Live Preview (real-time audio)</div>
-          <div class="detail">gemini-3.1-flash-live-preview enables audio-to-audio real-time conversations via the Live API. Key for agent-to-agent (A2A) and voice-first applications.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Mar 25</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge new google">Google</span> Lyria 3 music generation models</div>
-          <div class="detail">Lyria 3 models generate music from text and image prompts. Expands Gemini's multimodal capabilities into audio generation.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Mar 24</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge deprecation openai">OpenAI</span> Sora 2 models + Videos API deprecated (shutdown Sep 24)</div>
-          <div class="detail">OpenAI announced deprecation of Sora 2 model aliases/snapshots and the entire Videos API. Shutdown date: September 24, 2026. Plan migrations now if using Sora in production.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Mar 23</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge change google">Google</span> AI Studio billing: Prepay and Postpay plans</div>
-          <div class="detail">Google introduced Prepay and Postpay billing plans for AI Studio, giving developers more flexible payment options for Gemini API usage.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Mar 18</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge new google">Google</span> Built-in tools + function calling in one call; Maps grounding for Gemini 3</div>
-          <div class="detail">Gemini API now supports using Gemini’s built-in tools alongside custom function calling tools in a single request; Google Maps grounding is now supported for Gemini 3 models going forward.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Mar 17</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge new openai">OpenAI</span> GPT-5.4 mini + nano released</div>
-          <div class="detail">GPT-5.4 mini brings GPT-5.4-class capability to high-volume workloads with tool search, computer use, and compaction; GPT-5.4 nano is optimized for simple, high-volume tasks and supports compaction only.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Mar 16</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge change google">Google</span> Revamped Usage Tiers & billing spend caps</div>
-          <div class="detail">Google introduced new usage tier structure with billing account spend caps for Gemini API. Better control for production workloads.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Mar 12</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge change google">Google</span> AI Studio project-level spend caps</div>
-          <div class="detail">Added project-level spend caps for Gemini API billing in AI Studio, enabling tighter cost control for production experimentation.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Mar 10</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge new google">Google</span> Multimodal embedding model: gemini-embedding-2-preview</div>
-          <div class="detail">First multimodal embedding model supporting text, image, video, audio, and PDF inputs in a unified embedding space. Major for multimodal RAG and unified retrieval.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Mar 10</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge deprecation google">Google</span> gemini-2.5-flash-lite-preview shutdown Mar 31</div>
-          <div class="detail">Deprecated. Will be shut down March 31, 2026. Migrate to gemini-3.1-flash-lite-preview.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Mar 9</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge change google">Google</span> gemini-3-pro-preview alias redirected</div>
-          <div class="detail">Gemini 3 Pro Preview was shut down; the gemini-3-pro-preview alias now points to gemini-3.1-pro-preview.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Mar 12</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge change openai">OpenAI</span> Sora API: 20s generations, 1080p, edits endpoint; remix deprecated</div>
-          <div class="detail">Sora API expanded with character references, longer generations up to 20s, 1080p for sora-2-pro (billed at $0.70/sec), Batch API support, and a new /v1/videos/edits endpoint. /v1/videos/{video_id}/remix will be deprecated in 6 months.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Mar 5</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge new openai">OpenAI</span> GPT-5.4 launched</div>
-          <div class="detail">1.05M context, configurable 5-level reasoning, native computer-use API. First general-purpose model with built-in computer use. Priced at $2.50/$15 per 1M tokens. GPT-5.4 Pro at $30/$180.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Mar 4</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge deprecation openai">OpenAI</span> Legacy GPT-4 models deprecated Mar 26</div>
-          <div class="detail">gpt-4-0314, gpt-4-1106-preview, gpt-4-0125-preview, gpt-4-turbo-preview all sunset March 26, 2026. Requests auto-route to gpt-4.1.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Mar 3</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge new google">Google</span> Gemini 3.1 Flash-Lite Preview</div>
-          <div class="detail">First Flash-Lite model in the Gemini 3 series. 1M context, $0.25/$1.50 pricing. Ultra-efficient for high-volume, cost-sensitive workloads.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Feb 26</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge new google">Google</span> Nano Banana 2 image model + Gemini 3 Pro deprecated</div>
-          <div class="detail">Nano Banana 2 (gemini-3.1-flash-image-preview) optimized for speed. Gemini 3 Pro Preview shut down March 9.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Feb 19</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge new google">Google</span> Gemini 3.1 Pro launched</div>
-          <div class="detail">Frontier reasoning model. 1M context, $2/$12 per 1M tokens. Medium thinking level for cost/speed/performance balance. Enhanced agentic coding and multimodal analysis.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Feb 17</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge new anthropic">Anthropic</span> Claude Sonnet 4.6 launched</div>
-          <div class="detail">Most capable Sonnet yet. 1M context (beta), 128K max output, improved coding + computer use + long-context reasoning. $3/$15 per 1M tokens. Approaches Opus intelligence at Sonnet pricing.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Feb 13</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge deprecation openai">OpenAI</span> GPT-4o, GPT-4.1, o4-mini retired from ChatGPT</div>
-          <div class="detail">GPT-4o, GPT-4.1, GPT-4.1 mini, o4-mini, and GPT-5 (Instant/Thinking) removed from ChatGPT. Still available in API. GPT-4o in Custom GPTs until March 31.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <span class="changelog-date">Feb 12</span>
-        <div class="changelog-content">
-          <div class="title"><span class="badge new google">Google</span> Gemini 3 Deep Think major upgrade</div>
-          <div class="detail">Specialized reasoning mode upgraded to solve modern science, research, and engineering challenges. Available to Google AI Ultra subscribers.</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Tab: Deprecations -->
-  <div class="tab-panel" id="tab-deprecations">
-    <h2 class="section-title">Upcoming Deprecations & Deadlines</h2>
-
-    <div class="deprecation-banner">
-      <h3>OpenAI — March 26, 2026</h3>
-      <ul>
-        <li><strong>gpt-4-0314</strong> — sunset, auto-routes to gpt-4.1</li>
-        <li><strong>gpt-4-1106-preview</strong> — sunset, auto-routes to gpt-4.1</li>
-        <li><strong>gpt-4-0125-preview</strong> — sunset, auto-routes to gpt-4.1</li>
-        <li><strong>gpt-4-turbo-preview</strong> — sunset, auto-routes to gpt-4.1</li>
-      </ul>
-    </div>
-
-    <div class="deprecation-banner">
-      <h3>OpenAI — March 31, 2026</h3>
-      <ul>
-        <li><strong>GPT-4o in Custom GPTs</strong> — fully retired across Business, Enterprise, Edu plans</li>
-      </ul>
-    </div>
-
-    <div class="deprecation-banner">
-      <h3>Google — April 30, 2026</h3>
-      <ul>
-        <li><strong>gemini-robotics-er-1.5-preview</strong> — shutdown Apr 30 at 9AM PST. Migrate to gemini-robotics-er-1.6-preview (<a href="https://ai.google.dev/gemini-api/docs/changelog" target="_blank" rel="noopener">Gemini API changelog</a>)</li>
-      </ul>
-    </div>
-
-    <div class="deprecation-banner">
-      <h3>Google — March 31, 2026</h3>
-      <ul>
-        <li><strong>gemini-2.5-flash-lite-preview-09-2025</strong> — shutdown. Migrate to gemini-3.1-flash-lite-preview</li>
-      </ul>
-    </div>
-
-    <div class="deprecation-banner">
-      <h3>OpenAI — September 24, 2026</h3>
-      <ul>
-        <li><strong>Sora 2 models</strong> — all Sora 2 aliases and snapshots deprecated. Full shutdown Sep 24, 2026</li>
-        <li><strong>Videos API (/v1/videos/*)</strong> — entire endpoint being removed. Migrate video generation workflows</li>
-      </ul>
-    </div>
-
-    <div class="deprecation-banner">
-      <h3>OpenAI — May 7, 2026</h3>
-      <ul>
-        <li><strong>Realtime API Beta</strong> — deprecated and will be removed. Migrate to production Realtime API</li>
-      </ul>
-    </div>
-
-    <div class="deprecation-banner">
-      <h3>OpenAI — 2026 (date TBD)</h3>
-      <ul>
-        <li><strong>Assistants API</strong> — being replaced by Responses API. Sunset date in 2026</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <footer>
-    <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
-  </footer>
-
+<!-- Header -->
+<div class="header">
+<div>
+<h1>AI Model Tracker</h1>
+<p style="font-size:var(--text-sm);color:var(--text-muted);margin-top:var(--space-1);">GPT-5.4 · Claude Sonnet 4.6 · Gemini 3.1 Pro</p>
 </div>
-
+<div class="header-meta">
+<span class="last-updated" id="lastUpdated">Updated: Apr 16, 2026</span>
+<button aria-label="Switch theme" class="theme-toggle" data-theme-toggle="">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
+</button>
+</div>
+</div>
+<!-- Tab Navigation -->
+<nav class="tab-nav">
+<button class="tab-btn active" data-tab="overview">Overview</button>
+<button class="tab-btn" data-tab="comparison">Side-by-Side</button>
+<button class="tab-btn" data-tab="usecases">Use Cases</button>
+<button class="tab-btn" data-tab="changelog">Changelog</button>
+<button class="tab-btn" data-tab="deprecations">Deprecations</button>
+</nav>
+<!-- Tab: Overview -->
+<div class="tab-panel active" id="tab-overview">
+<div class="model-grid">
+<!-- GPT-5.4 -->
+<div class="model-card openai">
+<div class="provider">OpenAI</div>
+<div class="model-name">GPT-5.4</div>
+<div class="release-date">Released: March 5, 2026</div>
+<div class="spec-row"><span class="spec-label">Context</span><span class="spec-value">1.05M tokens</span></div>
+<div class="spec-row"><span class="spec-label">Input</span><span class="spec-value">$2.50 / 1M</span></div>
+<div class="spec-row"><span class="spec-label">Output</span><span class="spec-value">$15.00 / 1M</span></div>
+<div class="spec-row"><span class="spec-label">Cached input</span><span class="spec-value">$0.25 / 1M</span></div>
+<div class="spec-row"><span class="spec-label">Modality</span><span class="spec-value">Text + Image in</span></div>
+<div class="spec-row"><span class="spec-label">Reasoning</span><span class="spec-value">5-level configurable</span></div>
+<div class="spec-row"><span class="spec-label">Computer use</span><span class="spec-value">Yes (native)</span></div>
+<div class="spec-row"><span class="spec-label">SWE-bench</span><span class="spec-value">~80.0%</span></div>
+</div>
+<!-- Claude Sonnet 4.6 -->
+<div class="model-card anthropic">
+<div class="provider">Anthropic</div>
+<div class="model-name">Claude Sonnet 4.6</div>
+<div class="release-date">Released: February 17, 2026</div>
+<div class="spec-row"><span class="spec-label">Context</span><span class="spec-value">1M tokens (beta)</span></div>
+<div class="spec-row"><span class="spec-label">Input</span><span class="spec-value">$3.00 / 1M</span></div>
+<div class="spec-row"><span class="spec-label">Output</span><span class="spec-value">$15.00 / 1M</span></div>
+<div class="spec-row"><span class="spec-label">Max output</span><span class="spec-value">128K tokens</span></div>
+<div class="spec-row"><span class="spec-label">Modality</span><span class="spec-value">Text + Image in</span></div>
+<div class="spec-row"><span class="spec-label">Reasoning</span><span class="spec-value">Hybrid (extended thinking)</span></div>
+<div class="spec-row"><span class="spec-label">Computer use</span><span class="spec-value">Yes (improved)</span></div>
+<div class="spec-row"><span class="spec-label">Caching savings</span><span class="spec-value">Up to 90%</span></div>
+</div>
+<!-- Gemini 3.1 Pro -->
+<div class="model-card google">
+<div class="provider">Google</div>
+<div class="model-name">Gemini 3.1 Pro</div>
+<div class="release-date">Released: February 19, 2026</div>
+<div class="spec-row"><span class="spec-label">Context</span><span class="spec-value">1M tokens</span></div>
+<div class="spec-row"><span class="spec-label">Input (≤200K)</span><span class="spec-value">$2.00 / 1M</span></div>
+<div class="spec-row"><span class="spec-label">Output (≤200K)</span><span class="spec-value">$12.00 / 1M</span></div>
+<div class="spec-row"><span class="spec-label">Input (&gt;200K)</span><span class="spec-value">$4.00 / 1M</span></div>
+<div class="spec-row"><span class="spec-label">Modality</span><span class="spec-value">Text, Image, Video, Audio</span></div>
+<div class="spec-row"><span class="spec-label">Reasoning</span><span class="spec-value">3 thinking levels</span></div>
+<div class="spec-row"><span class="spec-label">ARC-AGI-2</span><span class="spec-value">77.1%</span></div>
+<div class="spec-row"><span class="spec-label">Max output</span><span class="spec-value">64K tokens</span></div>
+</div>
+</div>
+</div>
+<!-- Tab: Comparison -->
+<div class="tab-panel" id="tab-comparison">
+<h2 class="section-title">Side-by-Side Comparison</h2>
+<div class="comparison-wrapper">
+<table class="comparison-table">
+<thead>
+<tr>
+<th>Dimension</th>
+<th class="openai">GPT-5.4</th>
+<th class="anthropic">Claude Sonnet 4.6</th>
+<th class="google">Gemini 3.1 Pro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Release date</td>
+<td class="mono">Mar 5, 2026</td>
+<td class="mono">Feb 17, 2026</td>
+<td class="mono">Feb 19, 2026</td>
+</tr>
+<tr>
+<td>Context window</td>
+<td class="mono highlight winner">1.05M tokens</td>
+<td class="mono">1M (beta, API only)</td>
+<td class="mono">1M tokens</td>
+</tr>
+<tr>
+<td>Max output</td>
+<td class="mono">Not disclosed</td>
+<td class="mono highlight winner">128K tokens</td>
+<td class="mono">64K tokens</td>
+</tr>
+<tr>
+<td>Input price / 1M</td>
+<td class="mono">$2.50</td>
+<td class="mono">$3.00</td>
+<td class="mono highlight winner">$2.00</td>
+</tr>
+<tr>
+<td>Output price / 1M</td>
+<td class="mono">$15.00</td>
+<td class="mono">$15.00</td>
+<td class="mono highlight winner">$12.00</td>
+</tr>
+<tr>
+<td>Cached input price</td>
+<td class="mono highlight winner">$0.25 / 1M</td>
+<td class="mono">90% savings (est. ~$0.30)</td>
+<td class="mono">Supported (tiered)</td>
+</tr>
+<tr>
+<td>Input modalities</td>
+<td>Text, Image</td>
+<td>Text, Image</td>
+<td class="highlight winner">Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>Reasoning control</td>
+<td class="highlight winner">5-level configurable</td>
+<td>Hybrid extended thinking</td>
+<td>3 thinking levels</td>
+</tr>
+<tr>
+<td>Computer use</td>
+<td class="highlight">Native API</td>
+<td class="highlight">Improved in 4.6</td>
+<td>Not available</td>
+</tr>
+<tr>
+<td>SWE-bench Verified</td>
+<td class="mono highlight winner">~80.0%</td>
+<td class="mono">Approaches Opus-level</td>
+<td class="mono">Not reported</td>
+</tr>
+<tr>
+<td>ARC-AGI-2</td>
+<td class="mono">Not reported</td>
+<td class="mono">Not reported</td>
+<td class="mono highlight winner">77.1%</td>
+</tr>
+<tr>
+<td>GPQA (reasoning)</td>
+<td class="mono highlight winner">93.2% (Pro variant)</td>
+<td class="mono">Not reported</td>
+<td class="mono">Not reported</td>
+</tr>
+<tr>
+<td>Batch pricing</td>
+<td>50% off standard</td>
+<td>50% off standard</td>
+<td>Available</td>
+</tr>
+<tr>
+<td>Availability</td>
+<td>API + ChatGPT Pro/Plus</td>
+<td>API + Claude.ai + Bedrock + Vertex + Foundry</td>
+<td>API + Gemini App + Vertex</td>
+</tr>
+<tr>
+<td>Pro / Premium tier</td>
+<td class="mono">$30 / $180 per 1M (GPT-5.4 Pro)</td>
+<td class="mono">$15 / $75 per 1M (Opus 4.6)</td>
+<td class="mono">Deep Think (Ultra subs)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Tab: Use Cases -->
+<div class="tab-panel" id="tab-usecases">
+<h2 class="section-title">What Matters For Your Stack</h2>
+<div class="usecase-grid">
+<div class="usecase-card">
+<h3><span class="icon">⚙</span> Coding</h3>
+<p class="rec"><strong>Best pick: GPT-5.4</strong> for complex, multi-file codebases. ~80% SWE-bench and 5-level reasoning control let you dial cost vs. quality per request. <strong>Sonnet 4.6</strong> is the value play at $3 input — devs in early access often preferred it over Opus for frontend and financial code. Gemini 3.1 Pro is strong for agentic coding workflows with its efficient token usage.</p>
+</div>
+<div class="usecase-card">
+<h3><span class="icon">🤖</span> Agents</h3>
+<p class="rec"><strong>Best pick: GPT-5.4</strong> leads with native computer-use API and configurable reasoning (dial down for fast tool-calling loops, dial up for planning). <strong>Sonnet 4.6</strong> has improved computer use and agent planning — great for multi-step browser automation. Gemini 3.1 Pro excels at long-horizon tool orchestration with its medium thinking mode.</p>
+</div>
+<div class="usecase-card">
+<h3><span class="icon">📚</span> RAG</h3>
+<p class="rec"><strong>Best pick: Gemini 3.1 Pro</strong> — cheapest per-token ($2/$12) with a full 1M context window and native multimodal grounding (text, image, video, audio). Great for document-heavy pipelines. <strong>GPT-5.4</strong> at 1.05M context is the largest window but costs more. Sonnet 4.6's 128K max output is ideal when you need long-form synthesis from retrieved docs.</p>
+</div>
+<div class="usecase-card">
+<h3><span class="icon">🎨</span> Multimodal Apps</h3>
+<p class="rec"><strong>Best pick: Gemini 3.1 Pro</strong> is the clear leader — native text, image, video, and audio input with unified embeddings (gemini-embedding-2). GPT-5.4 handles text + image but no video/audio. Sonnet 4.6 is text + image only. For multimodal RAG or video analysis, Gemini is the only real option at the frontier.</p>
+</div>
+</div>
+</div>
+<!-- Tab: Changelog -->
+<div class="tab-panel" id="tab-changelog">
+<h2 class="section-title">Running Changelog</h2>
+<div class="changelog"><div class="changelog-entry" id="openai-2026-04-21-gpt-image-2"><h4>2026-04-21 — OpenAI: GPT Image 2 released (API)</h4><p>OpenAI added the gpt-image-2 model for /v1/images/generations and /v1/images/edits, with token-based image pricing and Batch API support (50% discount).</p><a href="https://developers.openai.com/api/docs/changelog">OpenAI API Changelog</a></div>
+<div class="changelog-entry">
+<span class="changelog-date">Apr 15</span>
+<div class="changelog-content">
+<div class="title"><span class="badge change openai">OpenAI</span> Agents SDK update: sandboxes, harness customization, memory controls</div>
+<div class="detail">Agents SDK now supports running agents in controlled sandboxes, inspecting/customizing the open-source harness, and controlling when memories are created and where they're stored.</div>
+<div class="meta">Source: <a href="https://developers.openai.com/api/docs/changelog" rel="noopener" target="_blank">OpenAI API changelog</a></div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Apr 15</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new google">Google</span> Gemini 3.1 Flash TTS Preview (text-to-speech)</div>
+<div class="detail">Google released Gemini 3.1 Flash TTS Preview, adding native text-to-speech capabilities to the Gemini API. Relevant for voice-first agents and multimodal applications.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Apr 15</span>
+<div class="changelog-content">
+<div class="title"><span class="badge change openai">OpenAI</span> Agents SDK: sandbox execution, memory controls</div>
+<div class="detail">OpenAI Agents SDK now supports running agents in controlled sandboxes for safer code execution, plus explicit controls over when memories are created and where they’re stored. Key for compliance, per-tenant isolation, and secure coding agents.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Apr 14</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new google">Google</span> Gemini Robotics ER 1.6 Preview; 1.5 Preview shutdown Apr 30</div>
+<div class="detail">gemini-robotics-er-1.6-preview released for embodied reasoning in robotics. gemini-robotics-er-1.5-preview will shut down April 30, 2026 at 9AM PST — migrate to 1.6 before then.</div>
+<div class="meta">Source: <a href="https://ai.google.dev/gemini-api/docs/changelog" rel="noopener" target="_blank">Gemini API changelog</a></div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Apr 7</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new anthropic">Anthropic</span> Project Glasswing: Claude Mythos Preview (gated research)</div>
+<div class="detail">Anthropic launched a gated research preview of Claude Mythos Preview for defensive cybersecurity via Project Glasswing. Pricing for participants: $25/MTok input, $125/MTok output. Available via Claude API, AWS Bedrock, Vertex AI, and Microsoft Foundry.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Apr 6</span>
+<div class="changelog-content">
+<div class="title"><span class="badge change anthropic">Anthropic</span> Google + Broadcom compute partnership (multi-GW TPU, 2027+)</div>
+<div class="detail">Anthropic expanded its partnership with Google and Broadcom for multiple gigawatts of next-generation TPU compute starting in 2027. Signals massive infrastructure buildout for future Claude models.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Apr 2</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new google">Google</span> Gemma 4 models available via Gemini API</div>
+<div class="detail">Gemma 4 open-weight models are now accessible through the Gemini API, expanding options for self-hosted and fine-tuned deployments.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Apr 1</span>
+<div class="changelog-content">
+<div class="title"><span class="badge change google">Google</span> New inference tiers: Flex and Priority</div>
+<div class="detail">Google introduced Flex and Priority inference tiers for Gemini API, giving developers control over latency vs. cost tradeoffs in production workloads.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Mar 31</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new google">Google</span> Veo 3.1 Lite Preview + gemini-2.5-flash-lite shutdown</div>
+<div class="detail">Veo 3.1 Lite Preview (veo-3.1-lite-generate-preview) launched for cost-efficient video generation. gemini-2.5-flash-lite-preview-09-2025 has been shut down — migrate to gemini-3.1-flash-lite-preview.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Mar 26</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new google">Google</span> Gemini 3.1 Flash Live Preview (real-time audio)</div>
+<div class="detail">gemini-3.1-flash-live-preview enables audio-to-audio real-time conversations via the Live API. Key for agent-to-agent (A2A) and voice-first applications.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Mar 25</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new google">Google</span> Lyria 3 music generation models</div>
+<div class="detail">Lyria 3 models generate music from text and image prompts. Expands Gemini's multimodal capabilities into audio generation.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Mar 24</span>
+<div class="changelog-content">
+<div class="title"><span class="badge deprecation openai">OpenAI</span> Sora 2 models + Videos API deprecated (shutdown Sep 24)</div>
+<div class="detail">OpenAI announced deprecation of Sora 2 model aliases/snapshots and the entire Videos API. Shutdown date: September 24, 2026. Plan migrations now if using Sora in production.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Mar 23</span>
+<div class="changelog-content">
+<div class="title"><span class="badge change google">Google</span> AI Studio billing: Prepay and Postpay plans</div>
+<div class="detail">Google introduced Prepay and Postpay billing plans for AI Studio, giving developers more flexible payment options for Gemini API usage.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Mar 18</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new google">Google</span> Built-in tools + function calling in one call; Maps grounding for Gemini 3</div>
+<div class="detail">Gemini API now supports using Gemini’s built-in tools alongside custom function calling tools in a single request; Google Maps grounding is now supported for Gemini 3 models going forward.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Mar 17</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new openai">OpenAI</span> GPT-5.4 mini + nano released</div>
+<div class="detail">GPT-5.4 mini brings GPT-5.4-class capability to high-volume workloads with tool search, computer use, and compaction; GPT-5.4 nano is optimized for simple, high-volume tasks and supports compaction only.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Mar 16</span>
+<div class="changelog-content">
+<div class="title"><span class="badge change google">Google</span> Revamped Usage Tiers &amp; billing spend caps</div>
+<div class="detail">Google introduced new usage tier structure with billing account spend caps for Gemini API. Better control for production workloads.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Mar 12</span>
+<div class="changelog-content">
+<div class="title"><span class="badge change google">Google</span> AI Studio project-level spend caps</div>
+<div class="detail">Added project-level spend caps for Gemini API billing in AI Studio, enabling tighter cost control for production experimentation.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Mar 10</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new google">Google</span> Multimodal embedding model: gemini-embedding-2-preview</div>
+<div class="detail">First multimodal embedding model supporting text, image, video, audio, and PDF inputs in a unified embedding space. Major for multimodal RAG and unified retrieval.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Mar 10</span>
+<div class="changelog-content">
+<div class="title"><span class="badge deprecation google">Google</span> gemini-2.5-flash-lite-preview shutdown Mar 31</div>
+<div class="detail">Deprecated. Will be shut down March 31, 2026. Migrate to gemini-3.1-flash-lite-preview.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Mar 9</span>
+<div class="changelog-content">
+<div class="title"><span class="badge change google">Google</span> gemini-3-pro-preview alias redirected</div>
+<div class="detail">Gemini 3 Pro Preview was shut down; the gemini-3-pro-preview alias now points to gemini-3.1-pro-preview.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Mar 12</span>
+<div class="changelog-content">
+<div class="title"><span class="badge change openai">OpenAI</span> Sora API: 20s generations, 1080p, edits endpoint; remix deprecated</div>
+<div class="detail">Sora API expanded with character references, longer generations up to 20s, 1080p for sora-2-pro (billed at $0.70/sec), Batch API support, and a new /v1/videos/edits endpoint. /v1/videos/{video_id}/remix will be deprecated in 6 months.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Mar 5</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new openai">OpenAI</span> GPT-5.4 launched</div>
+<div class="detail">1.05M context, configurable 5-level reasoning, native computer-use API. First general-purpose model with built-in computer use. Priced at $2.50/$15 per 1M tokens. GPT-5.4 Pro at $30/$180.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Mar 4</span>
+<div class="changelog-content">
+<div class="title"><span class="badge deprecation openai">OpenAI</span> Legacy GPT-4 models deprecated Mar 26</div>
+<div class="detail">gpt-4-0314, gpt-4-1106-preview, gpt-4-0125-preview, gpt-4-turbo-preview all sunset March 26, 2026. Requests auto-route to gpt-4.1.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Mar 3</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new google">Google</span> Gemini 3.1 Flash-Lite Preview</div>
+<div class="detail">First Flash-Lite model in the Gemini 3 series. 1M context, $0.25/$1.50 pricing. Ultra-efficient for high-volume, cost-sensitive workloads.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Feb 26</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new google">Google</span> Nano Banana 2 image model + Gemini 3 Pro deprecated</div>
+<div class="detail">Nano Banana 2 (gemini-3.1-flash-image-preview) optimized for speed. Gemini 3 Pro Preview shut down March 9.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Feb 19</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new google">Google</span> Gemini 3.1 Pro launched</div>
+<div class="detail">Frontier reasoning model. 1M context, $2/$12 per 1M tokens. Medium thinking level for cost/speed/performance balance. Enhanced agentic coding and multimodal analysis.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Feb 17</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new anthropic">Anthropic</span> Claude Sonnet 4.6 launched</div>
+<div class="detail">Most capable Sonnet yet. 1M context (beta), 128K max output, improved coding + computer use + long-context reasoning. $3/$15 per 1M tokens. Approaches Opus intelligence at Sonnet pricing.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Feb 13</span>
+<div class="changelog-content">
+<div class="title"><span class="badge deprecation openai">OpenAI</span> GPT-4o, GPT-4.1, o4-mini retired from ChatGPT</div>
+<div class="detail">GPT-4o, GPT-4.1, GPT-4.1 mini, o4-mini, and GPT-5 (Instant/Thinking) removed from ChatGPT. Still available in API. GPT-4o in Custom GPTs until March 31.</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Feb 12</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new google">Google</span> Gemini 3 Deep Think major upgrade</div>
+<div class="detail">Specialized reasoning mode upgraded to solve modern science, research, and engineering challenges. Available to Google AI Ultra subscribers.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tab: Deprecations -->
+<div class="tab-panel" id="tab-deprecations">
+<h2 class="section-title">Upcoming Deprecations &amp; Deadlines</h2>
+<div class="deprecation-banner">
+<h3>OpenAI — March 26, 2026</h3>
+<ul>
+<li><strong>gpt-4-0314</strong> — sunset, auto-routes to gpt-4.1</li>
+<li><strong>gpt-4-1106-preview</strong> — sunset, auto-routes to gpt-4.1</li>
+<li><strong>gpt-4-0125-preview</strong> — sunset, auto-routes to gpt-4.1</li>
+<li><strong>gpt-4-turbo-preview</strong> — sunset, auto-routes to gpt-4.1</li>
+</ul>
+</div>
+<div class="deprecation-banner">
+<h3>OpenAI — March 31, 2026</h3>
+<ul>
+<li><strong>GPT-4o in Custom GPTs</strong> — fully retired across Business, Enterprise, Edu plans</li>
+</ul>
+</div>
+<div class="deprecation-banner">
+<h3>Google — April 30, 2026</h3>
+<ul>
+<li><strong>gemini-robotics-er-1.5-preview</strong> — shutdown Apr 30 at 9AM PST. Migrate to gemini-robotics-er-1.6-preview (<a href="https://ai.google.dev/gemini-api/docs/changelog" rel="noopener" target="_blank">Gemini API changelog</a>)</li>
+</ul>
+</div>
+<div class="deprecation-banner">
+<h3>Google — March 31, 2026</h3>
+<ul>
+<li><strong>gemini-2.5-flash-lite-preview-09-2025</strong> — shutdown. Migrate to gemini-3.1-flash-lite-preview</li>
+</ul>
+</div>
+<div class="deprecation-banner">
+<h3>OpenAI — September 24, 2026</h3>
+<ul>
+<li><strong>Sora 2 models</strong> — all Sora 2 aliases and snapshots deprecated. Full shutdown Sep 24, 2026</li>
+<li><strong>Videos API (/v1/videos/*)</strong> — entire endpoint being removed. Migrate video generation workflows</li>
+</ul>
+</div>
+<div class="deprecation-banner">
+<h3>OpenAI — May 7, 2026</h3>
+<ul>
+<li><strong>Realtime API Beta</strong> — deprecated and will be removed. Migrate to production Realtime API</li>
+</ul>
+</div>
+<div class="deprecation-banner">
+<h3>OpenAI — 2026 (date TBD)</h3>
+<ul>
+<li><strong>Assistants API</strong> — being replaced by Responses API. Sunset date in 2026</li>
+</ul>
+</div>
+</div>
+<footer>
+<a href="https://www.perplexity.ai/computer" rel="noopener noreferrer" target="_blank">Created with Perplexity Computer</a>
+</footer>
+</div>
 <script>
 // Theme toggle
 (function(){

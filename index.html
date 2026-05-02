@@ -18,7 +18,7 @@
 <link href="https://www.perplexity.ai/computer" rel="author"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AI Model Tracker — GPT-5.4 vs Claude 4.6 vs Gemini 3.1</title>
+<title>AI Model Tracker — GPT-5.5 vs Claude 4.6 vs Gemini 3.1</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
@@ -474,10 +474,10 @@ footer a:hover { color: var(--text-muted); }
 <div class="header">
 <div>
 <h1>AI Model Tracker</h1>
-<p style="font-size:var(--text-sm);color:var(--text-muted);margin-top:var(--space-1);">GPT-5.4 · Claude Sonnet 4.6 · Gemini 3.1 Pro</p>
+<p style="font-size:var(--text-sm);color:var(--text-muted);margin-top:var(--space-1);">GPT-5.5 · Claude Sonnet 4.6 · Gemini 3.1 Pro</p>
 </div>
 <div class="header-meta">
-<span class="last-updated" id="lastUpdated">Updated: Apr 16, 2026</span>
+<span class="last-updated" id="lastUpdated">Updated: May 2, 2026</span>
 <button aria-label="Switch theme" class="theme-toggle" data-theme-toggle="">
 <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
 </button>
@@ -494,19 +494,19 @@ footer a:hover { color: var(--text-muted); }
 <!-- Tab: Overview -->
 <div class="tab-panel active" id="tab-overview">
 <div class="model-grid">
-<!-- GPT-5.4 -->
+<!-- GPT-5.5 -->
 <div class="model-card openai">
 <div class="provider">OpenAI</div>
-<div class="model-name">GPT-5.4</div>
-<div class="release-date">Released: March 5, 2026</div>
+<div class="model-name">GPT-5.5</div>
+<div class="release-date">Released: April 24, 2026</div>
 <div class="spec-row"><span class="spec-label">Context</span><span class="spec-value">1.05M tokens</span></div>
-<div class="spec-row"><span class="spec-label">Input</span><span class="spec-value">$2.50 / 1M</span></div>
-<div class="spec-row"><span class="spec-label">Output</span><span class="spec-value">$15.00 / 1M</span></div>
-<div class="spec-row"><span class="spec-label">Cached input</span><span class="spec-value">$0.25 / 1M</span></div>
+<div class="spec-row"><span class="spec-label">Input</span><span class="spec-value">$5.00 / 1M</span></div>
+<div class="spec-row"><span class="spec-label">Output</span><span class="spec-value">$30.00 / 1M</span></div>
+<div class="spec-row"><span class="spec-label">Cached input</span><span class="spec-value">$0.50 / 1M</span></div>
 <div class="spec-row"><span class="spec-label">Modality</span><span class="spec-value">Text + Image in</span></div>
-<div class="spec-row"><span class="spec-label">Reasoning</span><span class="spec-value">5-level configurable</span></div>
-<div class="spec-row"><span class="spec-label">Computer use</span><span class="spec-value">Yes (native)</span></div>
-<div class="spec-row"><span class="spec-label">SWE-bench</span><span class="spec-value">~80.0%</span></div>
+<div class="spec-row"><span class="spec-label">Reasoning</span><span class="spec-value">5-level (none→xhigh)</span></div>
+<div class="spec-row"><span class="spec-label">Max output</span><span class="spec-value">128K tokens</span></div>
+<div class="spec-row"><span class="spec-label">Knowledge cutoff</span><span class="spec-value">Dec 1, 2025</span></div>
 </div>
 <!-- Claude Sonnet 4.6 -->
 <div class="model-card anthropic">
@@ -673,6 +673,20 @@ footer a:hover { color: var(--text-muted); }
 <h2 class="section-title">Running Changelog</h2>
 <div class="changelog">
 <div class="changelog-entry">
+<span class="changelog-date">Apr 24</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new openai">OpenAI</span> GPT-5.5 launched — frontier reasoning at 2x the price</div>
+<div class="detail">GPT-5.5 (snapshot gpt-5.5-2026-04-23) is now available in the Responses and Chat Completions APIs. 1,050,000 token context window, 128K max output, Dec 1 2025 knowledge cutoff. Pricing: $5/1M input, $0.50 cached, $30/1M output (standard, &lt;272K context). Prompts &gt;272K input tokens are billed at 2x input / 1.5x output for the full session. Reasoning effort supports none/low/medium/high/xhigh. Marketed as OpenAI's strongest model for spreadsheet creation, polished frontend code, hard math, document understanding, tool use, and multi-source research. Roughly 2x the price of GPT-5.4 — community reports suggest output efficiency gains may partially offset the increase. Plus tier users hit token limits in minutes on heavy workloads, so budget carefully. (<a href="https://openai.com/index/introducing-gpt-5-5/" rel="noopener" target="_blank">Introducing GPT-5.5</a>, <a href="https://developers.openai.com/api/docs/models/gpt-5.5" rel="noopener" target="_blank">API docs</a>)</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">Apr 24</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new openai">OpenAI</span> GPT-5.5 Pro released for highest-accuracy work</div>
+<div class="detail">GPT-5.5 Pro is available in the Responses API (not Chat Completions). Pricing: $30/1M input, $180/1M output (standard, &lt;272K context); $60/$270 per 1M for long context. Same 1M context window as GPT-5.5. Use case: high-stakes reasoning, agent orchestration, and tasks where accuracy beats latency or cost. At $180/1M output, reserve for jobs where a wrong answer is more expensive than the model. Same price as GPT-5.4 Pro — the upgrade is free at the Pro tier. (<a href="https://developers.openai.com/api/docs/pricing" rel="noopener" target="_blank">OpenAI pricing</a>)</div>
+</div>
+</div>
+<div class="changelog-entry">
 <span class="changelog-date">Apr 22</span>
 <div class="changelog-content">
 <div class="title"><span class="badge new google">Google</span> gemini-embedding-2 goes GA</div>
@@ -725,7 +739,7 @@ footer a:hover { color: var(--text-muted); }
 <span class="changelog-date">Apr 14</span>
 <div class="changelog-content">
 <div class="title"><span class="badge new google">Google</span> Gemini Robotics ER 1.6 Preview; 1.5 Preview shutdown Apr 30</div>
-<div class="detail">gemini-robotics-er-1.6-preview released for embodied reasoning in robotics. gemini-robotics-er-1.5-preview will shut down April 30, 2026 at 9AM PST — migrate to 1.6 before then.</div>
+<div class="detail">gemini-robotics-er-1.6-preview released for embodied reasoning in robotics. gemini-robotics-er-1.5-preview shut down April 30, 2026 at 9AM PST — production workloads must use 1.6.</div>
 <div class="meta">Source: <a href="https://ai.google.dev/gemini-api/docs/changelog" rel="noopener" target="_blank">Gemini API changelog</a></div>
 </div>
 </div>
@@ -927,7 +941,7 @@ footer a:hover { color: var(--text-muted); }
 <div class="deprecation-banner">
 <h3>Google — April 30, 2026</h3>
 <ul>
-<li><strong>gemini-robotics-er-1.5-preview</strong> — shutdown Apr 30 at 9AM PST. Migrate to gemini-robotics-er-1.6-preview (<a href="https://ai.google.dev/gemini-api/docs/changelog" rel="noopener" target="_blank">Gemini API changelog</a>)</li>
+<li><strong>gemini-robotics-er-1.5-preview</strong> — shut down Apr 30, 2026 at 9AM PST (now offline). Migrate to gemini-robotics-er-1.6-preview (<a href="https://ai.google.dev/gemini-api/docs/changelog" rel="noopener" target="_blank">Gemini API changelog</a>)</li>
 </ul>
 </div>
 <div class="deprecation-banner">

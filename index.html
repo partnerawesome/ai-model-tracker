@@ -477,7 +477,7 @@ footer a:hover { color: var(--text-muted); }
 <p style="font-size:var(--text-sm);color:var(--text-muted);margin-top:var(--space-1);">GPT-5.5 · Claude Sonnet 4.6 · Gemini 3.1 Pro</p>
 </div>
 <div class="header-meta">
-<span class="last-updated" id="lastUpdated">Updated: May 2, 2026</span>
+<span class="last-updated" id="lastUpdated">Updated: May 6, 2026</span>
 <button aria-label="Switch theme" class="theme-toggle" data-theme-toggle="">
 <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
 </button>
@@ -672,6 +672,34 @@ footer a:hover { color: var(--text-muted); }
 <div class="tab-panel" id="tab-changelog">
 <h2 class="section-title">Running Changelog</h2>
 <div class="changelog">
+<div class="changelog-entry">
+<span class="changelog-date">May 6</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new openai">OpenAI</span> Agents SDK now available in TypeScript</div>
+<div class="detail">The OpenAI Agents SDK has shipped a TypeScript implementation alongside the existing Python SDK, including sandbox agents and the open-source harness. Significant for Node/TS-native agent stacks — reduces friction for web apps integrating tool-using agents and standardizes harnessing/testing patterns. If you maintain agent infrastructure in TypeScript, evaluate parity with your Python setup before migrating production workloads. (<a href="https://developers.openai.com/api/docs/changelog" rel="noopener" target="_blank">OpenAI API changelog</a>)</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">May 5</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new openai">OpenAI</span> chat-latest snapshot alias released</div>
+<div class="detail">New moving-target alias that tracks the current Instant model used in ChatGPT. Useful for evaluating ChatGPT-style behavior and quick regression checks, but explicitly NOT for production — the underlying snapshot rotates without notice. For production, keep pinning specific snapshots (or use GPT-5.5 for the recommended frontier line). (<a href="https://developers.openai.com/api/docs/changelog" rel="noopener" target="_blank">OpenAI API changelog</a>)</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">May 5</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new google">Google</span> Gemini File Search adds multimodal support + better grounding</div>
+<div class="detail">Gemini API File Search now supports image embedding and retrieval via gemini-embedding-2 — first-party image RAG without rolling your own pipeline. Grounding metadata also improved with new <code>media_id</code> and <code>page_numbers</code> fields, enabling proper image- and page-level citations in attributed-answer UIs. If you're using Gemini File Search for RAG, consider indexing images and surfacing the new metadata as inline citations. (<a href="https://ai.google.dev/gemini-api/docs/changelog" rel="noopener" target="_blank">Gemini API changelog</a>)</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">May 4</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new google">Google</span> Gemini API adds Webhooks for Batch / long-running operations</div>
+<div class="detail">Event-driven completion notifications for the Batch API and other long-running operations — no more polling. Cuts idle compute and simplifies orchestration for async workloads (batch evals, offline RAG indexing, large multimodal processing). Worth migrating any polling-based batch workflows to webhooks. (<a href="https://ai.google.dev/gemini-api/docs/changelog" rel="noopener" target="_blank">Gemini API changelog</a>)</div>
+</div>
+</div>
 <div class="changelog-entry">
 <span class="changelog-date">Apr 24</span>
 <div class="changelog-content">

@@ -477,7 +477,7 @@ footer a:hover { color: var(--text-muted); }
 <p style="font-size:var(--text-sm);color:var(--text-muted);margin-top:var(--space-1);">GPT-5.5 · Claude Sonnet 4.6 · Gemini 3.1 Pro</p>
 </div>
 <div class="header-meta">
-<span class="last-updated" id="lastUpdated">Updated: May 8, 2026</span>
+<span class="last-updated" id="lastUpdated">Updated: May 12, 2026</span>
 <button aria-label="Switch theme" class="theme-toggle" data-theme-toggle="">
 <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
 </button>
@@ -672,6 +672,27 @@ footer a:hover { color: var(--text-muted); }
 <div class="tab-panel" id="tab-changelog">
 <h2 class="section-title">Running Changelog</h2>
 <div class="changelog">
+<div class="changelog-entry">
+<span class="changelog-date">May 12</span>
+<div class="changelog-content">
+<div class="title"><span class="badge deprecation openai">OpenAI</span> DALL·E 2 and DALL·E 3 snapshots shut down today</div>
+<div class="detail">All <code>dall-e-2</code> and <code>dall-e-3</code> snapshots are shut down as of May 12, 2026. Migrate any remaining image-generation calls to <code>gpt-image-1</code> (frontier quality) or <code>gpt-image-1-mini</code> (cost/latency-optimized). Anything still pointing at DALL·E snapshots will now error — audit production code, marketing pipelines, and any user-facing image features. (<a href="https://developers.openai.com/api/docs/deprecations/" rel="noopener" target="_blank">OpenAI deprecations</a>)</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">May 11</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new anthropic">Anthropic</span> Claude Platform launches on AWS</div>
+<div class="detail">Anthropic announced Claude Platform on AWS — native AWS billing and IAM, with Messages, Files, Batches, Managed Agents, Skills, code execution, and tool use all supported. Big unlock for AWS-native shops: consolidated invoicing, IAM-scoped Claude access, and no separate vendor onboarding. Same Claude models (Sonnet 4.6, Opus 4.6/4.7) under the hood. Worth evaluating if you've been routing around procurement to use Anthropic direct. (<a href="https://platform.claude.com/docs/en/release-notes/overview" rel="noopener" target="_blank">Claude API release notes</a>)</div>
+</div>
+</div>
+<div class="changelog-entry">
+<span class="changelog-date">May 11</span>
+<div class="changelog-content">
+<div class="title"><span class="badge new openai">OpenAI</span> return_token_budget for Responses API web search</div>
+<div class="detail">New <code>return_token_budget</code> parameter on the Responses API web search tool allows GPT-5+ to spend more tokens reasoning over web search results before returning an answer. Directly relevant for deep-research agents and any RAG-over-web pipeline where the model was previously cutting reasoning short. Tune higher for harder multi-source questions; expect higher latency and token cost in exchange for answer quality. (<a href="https://developers.openai.com/api/docs/changelog" rel="noopener" target="_blank">OpenAI API changelog</a>)</div>
+</div>
+</div>
 <div class="changelog-entry">
 <span class="changelog-date">May 7</span>
 <div class="changelog-content">
@@ -993,6 +1014,12 @@ footer a:hover { color: var(--text-muted); }
 <!-- Tab: Deprecations -->
 <div class="tab-panel" id="tab-deprecations">
 <h2 class="section-title">Upcoming Deprecations &amp; Deadlines</h2>
+<div class="deprecation-banner">
+<h3>OpenAI — May 12, 2026 (SHUT DOWN)</h3>
+<ul>
+<li><strong>dall-e-2</strong> and <strong>dall-e-3</strong> snapshots — shut down May 12, 2026. Migrate to <code>gpt-image-1</code> or <code>gpt-image-1-mini</code>. (<a href="https://developers.openai.com/api/docs/deprecations/" rel="noopener" target="_blank">OpenAI deprecations</a>)</li>
+</ul>
+</div>
 <div class="deprecation-banner">
 <h3>Google — May 20, 2026 (BREAKING)</h3>
 <ul>
